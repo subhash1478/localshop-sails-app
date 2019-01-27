@@ -16,7 +16,8 @@ module.exports.policies = {
   * (`true` allows public access)                                            *
   *                                                                          *
   ***************************************************************************/
+//  '*': ['isAuthorized'],
 
-  // '*': true,
-
+    
+  
 };

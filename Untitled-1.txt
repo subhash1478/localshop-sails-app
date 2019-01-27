@@ -1,0 +1,1 @@
+http://www.example.com/redirect/?payment_id=MOJO8728005A91659607&payment_request_id=31b80223add647a7bc94250a4c2d5d9d

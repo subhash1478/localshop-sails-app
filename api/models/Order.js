@@ -1,31 +1,25 @@
 module.exports = {
-
   attributes: {
-
-    userid: {
-      type: 'string',
-      required: true
-    },
-    totalprice: {
-      type: 'number',
-      required: true
-    },
-    status: {
-      type: 'number',
-      required: true
-    },
-    discount: {
-      type: 'number',
-      required: true
-    },
-    delivered: {
-      type: 'number',
-      required: true
-    },
-    deliveredfee: {
-      type: 'number',
-      required: true
-    },
+    userid: {model:'Users'},
+    shopid: {model:'Post'},
+    driverid: {model:'Driver'},
+    orderid:{type: 'string',required: true},
+    totalprice: {type: 'number',required: true},
+    driver_accept:{type: 'number',required: true},
+    driver_picked:{type: 'number',required: true},
+    user_received:{type: 'number',required: true},
+    shop_accept:{type: 'number',required: true},
+    shop_prepared:{type: 'number',required: true},
+    status: {type: 'number',required: true},
+    payment_type: {type: 'string',required: true},
+    transactionid: {type: 'string'},
+    payment_recived: {type: 'number',required: true},
+    discount: {type: 'number',required: true},
+    delivered: {type: 'number',required: true},
+    deliveredfee: {type: 'number',required: true},
+    sgst: {type: 'number',required: true},
+    cgst: {type: 'number',required: true},
+    comment:{type: 'string' },
+    containercharges: {type: 'number',required: true},
   },
-
 };

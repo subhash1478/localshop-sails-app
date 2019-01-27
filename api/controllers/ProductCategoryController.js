@@ -3,13 +3,10 @@ module.exports = {
     var request_data = req.body;
     sails.log(request_data)
     let obj = {
-      category: request_data.category,
+      shopid: request_data.shopid,
       title: request_data.title,
     }
-    await ProductCategory.count({
-      category: request_data.category,
-      title: request_data.title
-    })
+    await ProductCategory.count(obj)
     .then(async function (count) {
       if( count>0){
         return ResponseService.json(412, res, "data already exists")
@@ -29,9 +26,15 @@ module.exports = {
     
     async getCategory(req, res) {
       var request_data = req.query;
-      await ProductCategory.find({
-        productCategory: request_data.id
-      })
+
+      if(request_data.shopid=='undefined'){
+var query={}
+      }else{
+        {
+          var query=   { shopid: request_data.shopid}
+        }
+      }
+      await ProductCategory.find(query).populate('shopid')
       .then(function (result) {
         if(!result || result.length<1){
           return ResponseService.json(412, res, "no data found")
